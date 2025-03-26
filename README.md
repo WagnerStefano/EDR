@@ -1,4 +1,4 @@
-										EDR
+									EDR
 
 O que é: o EDR (Endpoint Detection and Response) é um sistema de verificação para códigos maliciosos e resposta automatizada que pode gerar um relatório sobre a ameaça e finalizar a sua execução, com as funcionalidades básicas de Monitoramento de processos, Detecção de Execução de scripts maliciosos, Registro de Eventos no sistema e Respostas Automatizadas.
 
@@ -12,6 +12,7 @@ Instalação da ferramenta Psutil, dentro do VSCode, abra o terminal e insira o 
 		pip install psutil
 
 ![image](https://github.com/user-attachments/assets/0301d3e9-e0ba-445c-959d-0bff2564bd5c)
+
   A Biblioteca Psutil  (process and system utility) é uma biblioteca multiplataforma para recuperar informações sobre processos em execução e utilização do sistema (CPU, memória, discos, rede, sensores) em Python. É útil principalmente para monitoramento do sistema, criação de perfil e limitação de recursos de processo e gerenciamento de processos em execução.
 
 
@@ -21,24 +22,25 @@ Execução de scripts: .bat, .sh, .py e outros que possam ser usados para ataque
 Imports: Psutil para monitoramento de processos ativos no sistema.
 	          OS Utilizado para interagir com o sistema operacional.
 	          Time Utilizado para adicionar pausas no Loop de monitoramento.
+  	
 ![image](https://github.com/user-attachments/assets/c75cf4f6-354a-463e-b72e-fdb9742e5fdf)
 
  
 
 Definição de Listas de Processos Suspeitos e Extensões:
-  	suspicious_processes - Lista de processos considerados suspeitos.
-  	suspicious_extensions - Extensões de arquivos que podem indicar atividades maliciosas.
-   	 LOG_FILE - Nome do arquivo onde serão registrados os eventos suspeitos.
+  	<br>suspicious_processes - Lista de processos considerados suspeitos.
+  	<br>suspicious_extensions - Extensões de arquivos que podem indicar atividades maliciosas.
+   	<br> LOG_FILE - Nome do arquivo onde serão registrados os eventos suspeitos.
 
 ![image](https://github.com/user-attachments/assets/444018f1-cdea-404e-932f-f92ff5267e24)
 
  
 
 3. Função para registrar logs de atividades suspeitas
- Objetivo: Sempre que um processo suspeito for detectado, ele será registrado no arquivo edr_log.txt.
- 	with open (LOG_FILE, "a”) Abre o arquivo em modo de anexação ("a"), garantindo que novos eventos sejam adicionados sem apagar os antigos.
- 	log.write - Escreve a informação no arquivo TXT.
-print - Exibe um alerta no terminal.
+ Objetivo: Sempre que um processo suspeito for detectado, ele será registrado no arquivo edr_log.txt.<br>
+ 	with open (LOG_FILE, "a”) Abre o arquivo em modo de anexação ("a"), garantindo que novos eventos sejam adicionados sem apagar os antigos.<br>
+ 	log.write - Escreve a informação no arquivo TXT.<br>
+print - Exibe um alerta no terminal.<br>
 
 ![image](https://github.com/user-attachments/assets/d072f333-5924-4278-9060-ce6397d02e06)
 
