@@ -1,4 +1,4 @@
-EDR
+										EDR
 
 O que é: o EDR (Endpoint Detection and Response) é um sistema de verificação para códigos maliciosos e resposta automatizada que pode gerar um relatório sobre a ameaça e finalizar a sua execução, com as funcionalidades básicas de Monitoramento de processos, Detecção de Execução de scripts maliciosos, Registro de Eventos no sistema e Respostas Automatizadas.
 
@@ -8,7 +8,8 @@ Desenvolvimento da Ferramenta: Voltando ao desenvolvimento da ferramenta em sua 
 
 1.	Preparação do Ambiente de Desenvolvimento (VSCode)
 Instalação da ferramenta Psutil, dentro do VSCode, abra o terminal e insira o seguinte comando
-pip install psutil
+
+		pip install psutil
 
 ![image](https://github.com/user-attachments/assets/0301d3e9-e0ba-445c-959d-0bff2564bd5c)
   A Biblioteca Psutil  (process and system utility) é uma biblioteca multiplataforma para recuperar informações sobre processos em execução e utilização do sistema (CPU, memória, discos, rede, sensores) em Python. É útil principalmente para monitoramento do sistema, criação de perfil e limitação de recursos de processo e gerenciamento de processos em execução.
