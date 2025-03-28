@@ -44,4 +44,63 @@ print - Exibe um alerta no terminal.<br>
 
 ![image](https://github.com/user-attachments/assets/d072f333-5924-4278-9060-ce6397d02e06)
 
+
+
+4.Função para Monitoramento de Processos.
+Objetivo: Monitorar todos os processos em execução no sistema.
+ 	psutil.process_iter(attrs=['pid', 'name', 'cmdline']) - Obtém informações sobre todos os processos ativos.<br>
+ 	process_name - Nome do processo.<br>
+ 	pid - ID do processo.<br>
+	cmdline - Comando usado para iniciar o processo.<br>
+	command = '  '.join(cmdline) - Junta os argumentos do comando em uma única string para facilitar a leitura. 
+ <br>
+ ![image](https://github.com/user-attachments/assets/d88f5b1a-97cd-4630-87f6-b54927d7143f)
+
+
+ 
+
+
+5.  Verificação do Processo suspeito.
+Process_name.lower() in suspecious_processes: - inicia a verificação passando o parâmetro nome do processo em lower case para identificação e armazenagem em Log. <br>
+Log_SA(process_name, pid, command) – Registra as informações listadas sobre o processo.<br>
+		Psutil.Process(pid).terminate() – Finaliza o processo detectado com base
+	em seu pid. <br>
+ ![image](https://github.com/user-attachments/assets/5779e237-200b-4244-8440-500847ee00e1)
+
+	 
+
+6. Verifica se um Comando possui extensões suspeitas.
+		Any(ext int command for ext in suspecious_extensions): - Verifica
+	Se arquivos listados no início da aplicação (.bat .sh .py) foram iniciados. <br>
+Log_SA(process_name, pid, command) – Registra as informações caso um arquivo no formato listado seja executado. <br>
+Psutil.Process(pid).terminate() – Finaliza o arquivo suspeito com base no PID registrado. <br>
+![image](https://github.com/user-attachments/assets/e7479d87-7c38-424b-ba4e-71301c741cbf)
+
+
+	 
+	
+7. Tratamento De Erros.
+		Except (psutil.NoSuchProcess, psutil.ACessDenied, psutil.ZombieProcess):
+		Pass – Em casos em que o processo já esteja encerrado ou haja uma restrição de acesso já aplicada ou listada para que seja ignorada o código ignora o “erro” e continua executando a verificação e finalização. <br>
+  ![image](https://github.com/user-attachments/assets/178255ee-3130-4c49-9aee-d2f62daad98e)
+
+	 
+
+8. Pausa.
+		time.sleep(2) #intervalo de verificações – uma pausa aplicada para evitar e monitorar o consumo da aplicação, afim de chegar ao uso constante a partir da inicialização do SO. <br>
+  ![image](https://github.com/user-attachments/assets/19700839-9fea-4c22-8f57-4cd912af7cfc)
+
+	 
+
+9. Parâmetros Padão de inicialização.
+		if __name__ == "__main__”: - Em Python Arquivos .py são chamados de módulos e cada modulo pode ser executado diretamente como um APP ou divididos/importados em módulos, por tanto para identificar esses módulos utilizamos a variável __name__ que indicara o nome do modulo que estará em execução. <br>
+	Portanto utilizando a variável __name__ para nomear o módulo que não foi importado automaticamente o parâmetro é atualizado para __main__ e manterá este padrão de execução. <br>
+		print("[INFO] Monitoramento de Processos Iniciado!")
+   		 monitor_process() – Exibe a informação de inicio de execução da aplicação com a informação “ Monitoramento de Processos Iniciado! ”.
+   ![image](https://github.com/user-attachments/assets/10133e36-b53f-48ff-b4fe-f805bcc79aa4)
+
+
+	 
+
+
  
